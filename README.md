@@ -24,3 +24,9 @@
 - **Method:** GET
 - **Description:** Returns a JSON object listing suggested subjects for the user.
 - **Headers:** `x-auth-token`
+
+### 4. **items_overview**
+- **Endpoint:** `/items_overview`
+- **Method:** GET
+- **Description:** Returns a JSON object with your recent excercises
+- **Headers:** `x-auth-token`
