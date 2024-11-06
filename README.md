@@ -6,22 +6,21 @@
 
 ### 1. **Authentication**
 - **Endpoint:** `/auth/get_token`
-- **Description:** Authenticates a user and returns a token.
 - **Method:** POST
-- **Payload Parameters:**
-  - `email` (string, required): The user's email address.
-  - `password` (string, required): The user's password.
-  - `recaptcha_token` (string, optional): Required only if the server responds with a `429` status, indicating CAPTCHA validation is needed.
-- **Headers:** None required initially.
+- **Description:** Authenticates a user and returns a JSON object with a session token.
+- **Parameters:**
+  - `email` (string, required)
+  - `password` (string, required)
+  - `recaptcha_token` (string, optional, used on `429` errors)
 
 ### 2. **User Data**
 - **Endpoint:** `/get_user_data`
-- **Description:** Retrieves a JSON object with user information.
-- **Headers:** 
-  - `x-auth-token` (string, required)
+- **Method:** GET
+- **Description:** Returns a JSON object with user profile details (e.g., name, email, preferences).
+- **Headers:** `x-auth-token` (string, required)
 
 ### 3. **Suggested Subjects**
 - **Endpoint:** `/subjects/suggested_subjects`
-- **Description:** Returns a JSON object containing suggested subjects for the user.
-- **Headers:** 
-  - `x-auth-token` (string, required)
+- **Method:** GET
+- **Description:** Returns a JSON object listing suggested subjects for the user.
+- **Headers:** `x-auth-token` (string, required)
